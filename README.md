@@ -1,0 +1,2 @@
+# liff-message
+LIFF
