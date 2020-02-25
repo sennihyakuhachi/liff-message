@@ -9,8 +9,10 @@
 <script>
 liff.init({liffId: "1653887803-knbRlPdE"})
 .then(() => {
-  liff.sendMessages([{type:'text',text:atob(window.location.search.slice(1))}]);
-  liff.closeWindow();
+  liff.sendMessages([{type:'text',text:window.location.search.slice(1)}])
+  .then(()=> {
+    liff.closeWindow();
+  });
 });
 </script>
 </body>
