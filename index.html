@@ -9,7 +9,7 @@
 <script>
 liff.init({liffId: "1653887803-knbRlPdE"})
 .then(() => {
-  liff.sendMessages([{type:'text',text:window.location.search.slice(1).slice(0,-1);}])
+  liff.sendMessages([{type:'text',text:window.location.search.slice(1).slice(0,-1)}])
   .then(()=> {
     liff.closeWindow();
   });
