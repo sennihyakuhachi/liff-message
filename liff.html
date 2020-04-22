@@ -33,7 +33,10 @@
                 liff.init({liffId: "1654120264-QmAG5641"}).then(() => {
                     //$("body").html("sucess");
                     // $("body").html(liff.isInClient());
-                    
+                    liff.openWindow({
+                        url: "line://au/q/SQ114514",
+                        external: false
+                    });
                 }).error((err) => {
                     $("#errorlog").css("display", "block");
                     $("#errorlog").html(err.message);
