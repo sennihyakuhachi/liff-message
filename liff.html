@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+        <link href="index_style.css" rel="stylesheet">
+        <title>BLF Self Bot Free Trial</title>
+    </head>
+    <body>
+        <section id="mainarea">
+            <h3>BLF Self Bot Free Trial</h3>
+            <p>BLF半botを24時間無料で使うことができます。<br />
+                ログイン手順を確認してからログインすることを強くお勧めします。<br />
+                →<label for="popup-box">ログイン手順の詳細</label></p>
+            <div id="errorlog" class="alert alert-danger" role="alert"></div>
+            <button type="button" id="loginbtn" class="btn btn-lg btn-primary">Login</button>
+            <p>現在のログイン数は 0 / 100 人です。</p>
+            <p>保護bot / 半bot 販売中です。<br />販売アカウント: <a href="https://lin.ee/ldc02Xt">BLF Official</a></p>
+        </section>
+        <input type="checkbox" id="popup-box">
+        <div id="popup">
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/K6CR_t5WNvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <label for="popup-box">閉じる</label>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $("body").html(window.navigator.userAgent);
+            });
+        </script>
+    </body>
+</html>
