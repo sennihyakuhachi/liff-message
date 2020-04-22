@@ -29,9 +29,13 @@
             <label for="popup-box">閉じる</label>
         </div>
         <script type="text/javascript">
-            $(function(){
-                $("body").html(window.navigator.userAgent);
-                location.href = "line://au/q/114514";
+            $(() => {
+                liff.init({liffId: "1654120264-QmAG5641"}).then(() => {
+                    
+                }).error((err) => {
+                    $("#errorlog").css("display", "block");
+                    $("#errorlog").html(err.message);
+                });
             });
         </script>
     </body>
