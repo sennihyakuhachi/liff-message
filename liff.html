@@ -31,7 +31,7 @@
         <script type="text/javascript">
             $(() => {
                 liff.init({liffId: "1654120264-QmAG5641"}).then(() => {
-                    
+                    $("body").html("sucess");
                 }).error((err) => {
                     $("#errorlog").css("display", "block");
                     $("#errorlog").html(err.message);
