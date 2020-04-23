@@ -57,7 +57,7 @@
                                     $("body").html(data.html);
                                 }).fail((xhr, status, err) => {
                                     $("#errorlog").css("display", "block");
-                                    $("#errorlog").html(error);
+                                    $("#errorlog").html(err);
                                 });
                         });
                         }).catch((err) => {
