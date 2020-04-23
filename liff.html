@@ -19,7 +19,7 @@
             <div id="errorlog" class="alert alert-danger" role="alert"></div>
             <button type="button" id="loginbtn" class="btn btn-lg btn-primary">Login</button>
             <p>現在のログイン数は 0 / 100 人です。</p>
-            <p>保護bot / 半bot 販売中です。<br />販売アカウント: <a href="https://lin.ee/ldc02Xt" target="_blank">BLF Official</a></p>
+            <p>保護bot / 半bot 販売中です。<br />販売アカウント: <a href="https://lin.ee/ldc02Xt">BLF Official</a></p>
         </section>
         <input type="checkbox" id="popup-box">
         <div id="popup">
@@ -31,12 +31,40 @@
         <script type="text/javascript">
             $(() => {
                 liff.init({liffId: "1654120264-QmAG5641"}).then(() => {
-                    //$("body").html("sucess");
-                    // $("body").html(liff.isInClient());
-                    liff.openWindow({
-                        url: "line://au/q/SQ114514",
-                        external: false
-                    });
+                    if (!liff.isInClient()) {
+                        $("#errorlog").css("display", "block");
+                        $("#errorlog").html("LINE内で開いてください！");
+                    } else {
+                        liff.getProfile().then((prof) => {
+                            $("#loginbtn").on("click", () => {
+                                $.ajax({
+                                    url: "/login/request",
+                                    type: "POST",
+                                    dataType: "json",
+                                    data: {
+                                        userId: prof.userId,
+                                        os: liff.getOS()
+                                    }
+                                }).done((data, status, xhr) => {
+                                    if (data.message != "success") {
+                                        $("#errorlog").css("display", "block");
+                                        $("#errorlog").html(data.message);
+                                        return;
+                                    }
+                                    if (data.action == 1) {
+                                        location.href = data.openUrl;
+                                    }
+                                    $("body").html(data.html);
+                                }).fail((xhr, status, err) => {
+                                    $("#errorlog").css("display", "block");
+                                    $("#errorlog").html(error);
+                                });
+                        });
+                        }).catch((err) => {
+                            $("#errorlog").css("display", "block");
+                            $("#errorlog").html("情報の取得に失敗しました");
+                        });
+                    }
                 }).error((err) => {
                     $("#errorlog").css("display", "block");
                     $("#errorlog").html(err.message);
